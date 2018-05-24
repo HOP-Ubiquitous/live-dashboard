@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+  synch-frontend:
+    image: homard.hopu.eu:5001/synch-front:1.2
+    ports:
+      - 80:80
+    environment:
+      - SITE_URL=synchronicity.hopu.eu
+      - GOOGLE_MAPS_API=AIzaSyCwdzyyqxxk1-toz8XIti7oy8cSWIVqCtI
+      - SYNCHRONICITY_BACKEND=synch-backend:8000
+    networks:
+      - synch-network
+#      - proxy-network
+
+  synch-backend:
+    image: homard.hopu.eu:5001/synch-backend:1.1
+    ports:
+      - 8000:8000
+    environment:
+      - ORION_URL=https://broker.fiware.urbanplatform.portodigital.pt
+      - ORION_SERVICE=
+      - ORION_SERVICEPATH=
+      - DJANGO_DEBUG=True
+      - DJANGO_ALLOWED_HOSTS="*"
+    networks:
+      - synch-network
+
+networks:
+  synch-network:
+
+#  proxy-network:
+#    external:
+#      name: reverse-proxy-network
