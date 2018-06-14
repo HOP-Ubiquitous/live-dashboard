@@ -9,6 +9,8 @@ The current service version is relying on Google Maps API to create a web servic
 
 ## Architecture
 Currently the service architecture is made up of a server that interacts directly with the STH Comet and Orion Context Broker FIWARE components requesting devices data, and a web page in which the data is represented based on a custom map.
+![alt text](https://github.com/HOP-Ubiquitous/live-dashboard/raw/master/images/smartcities-dashboard-fiware-architecture.png "High-level architecture")
+
 
 ### Service components
 - Fiware IoT Stack: the solution is based on the main FIWARE components. 
