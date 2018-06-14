@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   synch-frontend:
-    image: homard.hopu.eu:5001/synch-front:1.2
+    image: synchronicityiot/dashboard-frontend:1.0
     ports:
       - 80:80
     environment:
@@ -14,7 +14,7 @@ services:
 #      - proxy-network
 
   synch-backend:
-    image: homard.hopu.eu:5001/synch-backend:1.1
+    image: synchronicityiot/dashboard-backend:1.0
     ports:
       - 8000:8000
     environment:
